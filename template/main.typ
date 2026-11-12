@@ -27,7 +27,7 @@
   cover-image: image("devil.jpg"),
   credit: "Teapet",
   foreground: _page-foreground(frames:none), // show boxes with frames: _default-frames
-  background: _page-background,
+  background: _page-background(),
 )
 
 

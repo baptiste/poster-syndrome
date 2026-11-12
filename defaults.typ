@@ -182,27 +182,31 @@
 }
 
 
-#let _page-background = {
+#let _page-background(
+  theme: _default-theme,
+  frames: _default-frames,
+  container: _default-container,
+) = {
   let padding = 1cm
-  let col1 = _default-theme.palette.melon.darken(1%)
-  let col2 = _default-theme.palette.contrast.lighten(60%)
-  let col3 = _default-theme.palette.contrast.lighten(98%)
-  let col4 = _default-theme.palette.melon
+  let col1 = theme.palette.melon.darken(1%)
+  let col2 = theme.palette.contrast.lighten(60%)
+  let col3 = theme.palette.contrast.lighten(98%)
+  let col4 = theme.palette.melon
 
   // right page
   place(right + top, rect(width: 50%, height: 100%, fill: col1.desaturate(80%).lighten(20%)))
 
   // coloured frame around whole poster
-  let xmid = (_default-container.width/2 - 12.5) * 1mm
-  let xrig = (_default-container.width - 25) * 1mm
-  let ybot = (_default-container.height - 25) * 1mm
+  let xmid = (container.width/2 - 12.5) * 1mm
+  let xrig = (container.width - 25) * 1mm
+  let ybot = (container.height - 25) * 1mm
 
     // left page
   place(dx: 12.5mm, dy: 12.5mm, 
   // rect(
   //   stroke: col4 + 10pt,
-  //   width: (_default-container.width - 25) * 1mm,
-  //   height: (_default-container.height - 25) * 1mm,
+  //   width: (container.width - 25) * 1mm,
+  //   height: (container.height - 25) * 1mm,
   // )
   
   curve(
@@ -230,12 +234,12 @@
   // details box
   place(
     left + top,
-    dx: _default-frames.details.x * 1mm - padding,
-    dy: _default-frames.details.y * 1mm - padding,
+    dx: frames.details.x * 1mm - padding,
+    dy: frames.details.y * 1mm - padding,
     rect(
-      width: _default-frames.details.width * 1mm + padding,
+      width: frames.details.width * 1mm + padding,
       stroke: (left: (thickness: 2mm, paint: col2.transparentize(40%))),
-      height: _default-frames.details.height * 1mm + 2 * padding,
+      height: frames.details.height * 1mm + 2 * padding,
       fill: col2.transparentize(100%),
       radius: 0mm,
     ),
@@ -244,11 +248,11 @@
   //methods box
   place(
     left + top,
-    dx: _default-frames.methods.x * 1mm - padding,
-    dy: _default-frames.methods.y * 1mm - padding,
+    dx: frames.methods.x * 1mm - padding,
+    dy: frames.methods.y * 1mm - padding,
     rect(
-      width: _default-frames.methods.width * 1mm + 2 * padding,
-      height: _default-frames.methods.height * 1mm + 1.2 * padding,
+      width: frames.methods.width * 1mm + 2 * padding,
+      height: frames.methods.height * 1mm + 1.2 * padding,
       fill: col3,
       radius: 5mm,
     ),
