@@ -91,17 +91,20 @@
   frame(tag: "details")[
     #show: styles.author
     #authors
-    #v(1fr)
     #if qr-code != none {
       v(1fr)
       qr-code
     }
-    #show: styles.affiliation
-    #affiliation
-    #v(1fr)
-    #show: styles.date
-    #date
-    #v(1fr)
+    #if affiliation != none {
+      v(1fr)
+      show: styles.affiliation
+      affiliation
+    }
+    #if date != none {
+      v(1fr)
+      show: styles.date
+      date
+    }
   ]
 
   // custom frames left to the user
