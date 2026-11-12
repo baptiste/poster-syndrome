@@ -183,7 +183,7 @@
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
     $
-      frac(diff bold(u), diff t) plus lr((bold(u) dot.op nabla)) bold(u) eq minus 1 / rho nabla P plus nu nabla^2 bold(u)
+      frac(partial bold(u), partial t) plus lr((bold(u) dot.op nabla)) bold(u) eq minus 1 / rho nabla P plus nu nabla^2 bold(u)
     $
 
     === More nonsense
@@ -208,12 +208,12 @@
   // Green tea (绿茶 - lǜchá), White tea (白茶 - báichá), Yellow tea (黄茶 - huángchá), Black tea (红茶 - hóngchá), Oolong tea (乌龙茶 - wūlóngchá), and Dark tea (黑茶 - hēichá)
 
   #let li = (
-    insta(image("green-tea.jpg"), description: text[白茶]),
-    insta(image("white-tea.jpg"), description: text[绿茶]),
-    insta(image("yellow-tea.jpg"), description: text[黄茶]),
-    insta(image("red-tea.jpg"), description: text[乌龙茶]),
-    insta(image("oolong-tea.jpg"), description: text[红茶]),
-    insta(image("dark-tea.jpg"), description: text[黑茶]),
+    insta(img: image("green-tea.jpg"), description: text[白茶]),
+    insta(img: image("white-tea.jpg"), description: text[绿茶]),
+    insta(img: image("yellow-tea.jpg"), description: text[黄茶]),
+    insta(img: image("red-tea.jpg"), description: text[乌龙茶]),
+    insta(img: image("oolong-tea.jpg"), description: text[红茶]),
+    insta(img: image("dark-tea.jpg"), description: text[黑茶]),
   )
 
 
